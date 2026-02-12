@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — My Public Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">My Website</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <h1>About</h1>
+    <p>This is a starter template for a public website. Use this page to describe the site, the team, or purpose.</p>
+    <section>
+      <h2>Getting started</h2>
+      <p>Copy the files, update content, and deploy to your preferred static host.</p>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year-about"></span> My Public Website</p>
+    </div>
+  </footer>
+  <script>document.getElementById('year-about').textContent = new Date().getFullYear();</script>
+</body>
+</html>

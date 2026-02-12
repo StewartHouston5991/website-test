@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — My Public Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">My Website</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <h1>Contact</h1>
+    <p>If you'd like to get in touch, use the form below or email <a href="mailto:hello@example.com">hello@example.com</a>.</p>
+
+    <form id="contactForm" method="POST" action="https://formspree.io/f/your-form-id">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" required>
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+
+    <p class="hint">Tip: replace the `action` with your Formspree endpoint or handle submissions on your backend.</p>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year-contact"></span> My Public Website</p>
+    </div>
+  </footer>
+  <script>document.getElementById('year-contact').textContent = new Date().getFullYear();</script>
+</body>
+</html>
