@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function(){
       }
       var diff = now - sinceDate;
       if(diff >= 0){
-        sinceEl.textContent = 'Time since: ' + formatSpan(diff) + ' (since ' + sinceDate.toDateString() + ')';
+        sinceEl.textContent = 'Marriage clock: ' + formatSpan(diff) + ' (since ' + sinceDate.toDateString() + ')';
       } else {
         sinceEl.textContent = 'Time until: ' + formatSpan(diff) + ' (until ' + sinceDate.toDateString() + ')';
       }
