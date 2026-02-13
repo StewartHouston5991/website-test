@@ -33,11 +33,16 @@ button{background:var(--accent);color:#fff;border:none;padding:0.6rem 1rem;borde
 
 .gallery{padding:2rem 0}
 .gallery h2{margin-bottom:1.5rem}
-.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}
-.gallery-grid img{width:100%;height:auto;border-radius:8px;object-fit:cover}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:900px}
+.gallery-grid img{width:100%;height:300px;border-radius:8px;object-fit:cover}
 
 @media (max-width:800px){
   .features{grid-template-columns:1fr}
   .main-nav{display:none}
   .nav-toggle{display:inline-block}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media (max-width:500px){
+  .gallery-grid{grid-template-columns:1fr}
 }
