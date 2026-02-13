@@ -62,12 +62,12 @@ document.addEventListener('DOMContentLoaded', function(){
   // Timer for "us"
   var sinceUsEl = document.getElementById('sinceTimerUs');
   if(sinceUsEl){
-    var sinceUsAttr = sinceUsEl.getAttribute('data-since-us');
+    var sinceUsAttr = sinceUsEl.getAttribute('data-since');
     var sinceUsDate = sinceUsAttr ? new Date(sinceUsAttr) : null;
     function updateSinceUs(){
       var now = new Date();
       if(!sinceUsDate || isNaN(sinceUsDate.getTime())){
-        sinceUsEl.textContent = 'Invalid date — edit the data-since-us attribute';
+        sinceUsEl.textContent = 'Invalid date — edit the data-since attribute';
         return;
       }
       var diff = now - sinceUsDate;
