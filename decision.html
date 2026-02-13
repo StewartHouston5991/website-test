@@ -22,23 +22,25 @@
   <main class="container">
     <a class="btn" href="yes.html">Yes</a>
     <p>Good decision to pick the above</p>
-    <section>
+    <section class="move-btn-parent">
       <button class="btn move-btn" id="noBtn" type="button">No</button>
       <script>
         const noBtn = document.getElementById('noBtn');
-        let moveCount = 0;
+        const parent = noBtn.parentElement;
+        parent.style.position = 'relative';
+        noBtn.style.position = 'absolute';
+        noBtn.style.left = '0px';
+        noBtn.style.top = '0px';
         noBtn.addEventListener('mouseenter', function() {
-          // Move to a random position within a range
-          const x = Math.floor(Math.random() * 120) - 60; // -60 to +60 px
-          const y = Math.floor(Math.random() * 60) - 30;  // -30 to +30 px
+          const parentRect = parent.getBoundingClientRect();
+          const btnRect = noBtn.getBoundingClientRect();
+          // Calculate max movement so button stays in parent
+          const maxX = parent.offsetWidth - btnRect.width;
+          const maxY = parent.offsetHeight - btnRect.height;
+          const x = Math.random() * maxX;
+          const y = Math.random() * maxY;
           noBtn.style.left = x + 'px';
           noBtn.style.top = y + 'px';
-          moveCount++;
-        });
-        noBtn.addEventListener('mouseleave', function() {
-          // Optionally reset position
-          // noBtn.style.left = '0px';
-          // noBtn.style.top = '0px';
         });
       </script>
       <p>Good luck to you if you pick no</p>
