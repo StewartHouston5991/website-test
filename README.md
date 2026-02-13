@@ -4,7 +4,7 @@ Minimal, accessible static site template you can fork and deploy.
 
 Quick start
 
-1. Preview locally (open `index.html` in a browser or run a simple server):
+1. Preview locally (open `home.html` in a browser or run a simple server):
 
 ```bash
 # Python 3
@@ -12,7 +12,7 @@ python3 -m http.server 8000
 # then open http://localhost:8000
 ```
 
-2. Update content in the HTML files: `index.html`, `about.html`, `contact.html`.
+2. Update content in the HTML files: `home.html`, `about.html`, `contact.html`.
 
 3. Deploy
 
