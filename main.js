@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function(){
     return days + 'd ' + hours + 'h ' + mins + 'm ' + secs + 's';
   }
 
+  // Timer for marriage
   var sinceEl = document.getElementById('sinceTimer');
   if(sinceEl){
     var sinceAttr = sinceEl.getAttribute('data-since');
@@ -56,5 +57,27 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     updateSince();
     setInterval(updateSince, 1000);
+  }
+
+  // Timer for "us"
+  var sinceUsEl = document.getElementById('sinceTimerUs');
+  if(sinceUsEl){
+    var sinceUsAttr = sinceUsEl.getAttribute('data-since-us');
+    var sinceUsDate = sinceUsAttr ? new Date(sinceUsAttr) : null;
+    function updateSinceUs(){
+      var now = new Date();
+      if(!sinceUsDate || isNaN(sinceUsDate.getTime())){
+        sinceUsEl.textContent = 'Invalid date — edit the data-since-us attribute';
+        return;
+      }
+      var diff = now - sinceUsDate;
+      if(diff >= 0){
+        sinceUsEl.textContent = 'Us clock: ' + formatSpan(diff) + ' (since ' + sinceUsDate.toDateString() + ')';
+      } else {
+        sinceUsEl.textContent = 'Time until: ' + formatSpan(diff) + ' (until ' + sinceUsDate.toDateString() + ')';
+      }
+    }
+    updateSinceUs();
+    setInterval(updateSinceUs, 1000);
   }
 });
