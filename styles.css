@@ -1,3 +1,8 @@
+/* Make the 'No' button move when hovered */
+.move-btn {
+  position: relative;
+  transition: left 0.2s, top 0.2s;
+}
 :root{
   --bg:#ffffff;
   --fg:#111827;

@@ -23,7 +23,24 @@
     <a class="btn" href="yes.html">Yes</a>
     <p>Good decision to pick the above</p>
     <section>
-      <button class="btn" type="button">No</button>
+      <button class="btn move-btn" id="noBtn" type="button">No</button>
+      <script>
+        const noBtn = document.getElementById('noBtn');
+        let moveCount = 0;
+        noBtn.addEventListener('mouseenter', function() {
+          // Move to a random position within a range
+          const x = Math.floor(Math.random() * 120) - 60; // -60 to +60 px
+          const y = Math.floor(Math.random() * 60) - 30;  // -30 to +30 px
+          noBtn.style.left = x + 'px';
+          noBtn.style.top = y + 'px';
+          moveCount++;
+        });
+        noBtn.addEventListener('mouseleave', function() {
+          // Optionally reset position
+          // noBtn.style.left = '0px';
+          // noBtn.style.top = '0px';
+        });
+      </script>
       <p>Good luck to you if you pick no</p>
     </section>
   </main>
