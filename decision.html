@@ -33,7 +33,7 @@
           noBtn.style.position = 'absolute';
           noBtn.style.left = '0px';
           noBtn.style.top = '0px';
-          noBtn.addEventListener('mouseenter', function() {
+          function moveNoBtn() {
             const parentRect = parent.getBoundingClientRect();
             const btnRect = noBtn.getBoundingClientRect();
             // Calculate max movement so button stays in parent, with 10px padding
@@ -43,6 +43,16 @@
             const y = 10 + Math.random() * (maxY > 0 ? maxY : 0);
             noBtn.style.left = x + 'px';
             noBtn.style.top = y + 'px';
+          }
+          noBtn.addEventListener('mouseenter', moveNoBtn);
+          noBtn.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            moveNoBtn();
+          }, {passive: false});
+          noBtn.addEventListener('click', function(e) {
+            // Prevent click from triggering button action
+            e.preventDefault();
+            moveNoBtn();
           });
         });
       </script>
