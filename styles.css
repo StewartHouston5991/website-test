@@ -1,7 +1,11 @@
 /* Make the 'No' button move when hovered */
 .move-btn {
-  position: relative;
+  position: absolute;
   transition: left 0.2s, top 0.2s;
+}
+section.move-btn-parent {
+  position: relative;
+  min-height: 80px;
 }
 :root{
   --bg:#ffffff;
